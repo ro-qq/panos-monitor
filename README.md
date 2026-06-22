@@ -1,9 +1,5 @@
 # PAN-OS Monitor
 
-## 语言/Language
--  [中文](#中文)
--  [English](#english)
-
 ---
 
 **A Chrome Extension for Real-Time Palo Alto Networks NGFW Monitoring**
@@ -14,6 +10,12 @@
 [![Manifest](https://img.shields.io/badge/Manifest-V3-blue?style=flat-square)](https://developer.chrome.com/docs/extensions/mv3/)
 [![PAN-OS](https://img.shields.io/badge/PAN--OS-11.x%20%2F%2012.x-orange?style=flat-square)](https://docs.paloaltonetworks.com/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+
+---
+
+## 语言/Language
+-  [中文](#中文)
+-  [English](#english)
 
 ---
 
