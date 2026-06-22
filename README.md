@@ -150,7 +150,8 @@ panos-monitor/
 
 ## Screenshots
 
-<img width="2904" height="1892" alt="image" src="https://github.com/user-attachments/assets/7430c488-faf1-448c-a339-2e4da0d74e69" />
+> <img width="2838" height="1770" alt="image" src="https://github.com/user-attachments/assets/0ace37b5-c419-490e-8b4a-0d6f9692bfdb" />
+
 
 ---
 
