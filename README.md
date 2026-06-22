@@ -2,9 +2,9 @@
 
 ---
 
-**A Chrome Extension for Real-Time Palo Alto Networks NGFW Monitoring**
+**A Chrome Extension for Palo Alto Networks NGFW Monitoring**
 
-> 一款用于实时监控 Palo Alto Networks 下一代防火墙的 Chrome 扩展程序
+> 一款用于监控 Palo Alto Networks 下一代防火墙的 Chrome 扩展程序
 
 [![Version](https://img.shields.io/badge/version-0.6.89-FFCB06?style=flat-square)](https://github.com/)
 [![Manifest](https://img.shields.io/badge/Manifest-V3-blue?style=flat-square)](https://developer.chrome.com/docs/extensions/mv3/)
