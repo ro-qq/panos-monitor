@@ -48,9 +48,6 @@ PAN-OS Monitor is a Chrome MV3 browser extension that connects directly to Palo 
 
 ### Supported Devices
 
-- PA-220, PA-440, PA-820, PA-850
-- PA-3220, PA-3250, PA-3260
-- PA-5220, PA-5250, PA-5260, PA-5450
 - Any PAN-OS 10.x / 11.x / 12.x device with management API access
 
 ### Installation (Developer Mode)
