@@ -12,7 +12,7 @@
 ---
 
 ## Downloads
-Download the latest release from [release page](https://github.com/ro-qq/panos-monitor/releases/tag/v0.6.90).
+Download the latest release from [release page](https://github.com/ro-qq/panos-monitor/releases/tag/latest.zip).
 
 ---
 
