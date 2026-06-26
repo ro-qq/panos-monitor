@@ -90,3 +90,17 @@ Click **Add Firewall** in the dashboard sidebar, enter the HTTPS URL and API Key
 | GitHub update check | Weekly |
 
 All data is processed locally. No data is uploaded to any external server.
+
+---
+
+## Disclaimer
+
+This project is an independent open-source tool and is not affiliated with or endorsed by Palo Alto Networks.
+
+> 本项目为独立开源工具，与 Palo Alto Networks 官方无关。
+
+---
+
+## License
+
+MIT License — see [LICENSE](LICENSE) for details.
