@@ -28,15 +28,29 @@ PAN-OS Monitor is a Chrome MV3 browser extension that connects directly to Palo 
 
 | Tab | What you get |
 |-----|-------------|
-| **Overview** | MP CPU, DP CPU, memory, sessions, throughput (kbps/cps/pps) cards + trend charts |
-| **Interfaces** | Physical & logical interface rates, packet counters, errors, drops; hardware-level port statistics (25+ counters with tooltips) |
-| **Session Details** | Session counts by state (active/closed/closing/discard/initial/opening), SSL decryption stats, ingress backlogs, per-vsys session distribution |
-| **Resources** | MP CPU breakdown gauges (us/sy/id/wa/hi/si/ni/st); DP CPU trends at 5 time granularities (second/minute/hour/day/week); disk space usage |
+| **Overview** | Memory, active sessions, throughput (kbps/cps/pps) cards + trend charts; auto-refreshes every 5 min |
+| **Interfaces** | Physical & logical interface rate trends; hardware-level port statistics (25+ counters with diagnostic tooltips) |
+| **Session Details** | Session counts by state (active/closed/closing/discard/initial/opening), CPS trend, policy block rate, per-vsys distribution |
+| **Resources** | CPU performance gauges (us/sy/id/wa/hi/si/ni/st); DP CPU trends at 5 time granularities (second/minute/hour/day/week); core service process performance chart; disk space |
 | **Counter Details** | Full `show counter global` output; change highlighting; value & rate trend charts per counter |
 | **GlobalProtect** | GP version info; live user list (username, computer, client IP, VPN IP, login time) |
 
+### Key Technical Details
+
+- **Chrome MV3 Service Worker** — no persistent background page; polling driven by Chrome Alarms API (every 5 minutes)
+- **Tiered polling** — system info refreshes every 30 min; performance data every 5 min; GP skipped automatically if not configured
+- **Per-tab partial refresh** — each tab's refresh button only fetches data relevant to that view
+- **Content Script Proxy** — bypasses Private Network Access (PNA) restrictions for self-signed certificate devices
+- **Auto-detect** — open your firewall's management page and log in; the extension automatically captures the API key and adds the device
+- **Update notifications** — checks GitHub weekly for new releases; notifies via desktop notification and sidebar banner
+- **Dual theme** — light and dark mode; Chinese/English UI
+- **Zero dependencies** — pure vanilla JS, no npm, no build step
+
 ### Supported Devices
 
+- PA-220, PA-440, PA-820, PA-850
+- PA-3220, PA-3250, PA-3260
+- PA-5220, PA-5250, PA-5260, PA-5450
 - Any PAN-OS 10.x / 11.x / 12.x device with management API access
 
 ### Installation (Developer Mode)
@@ -50,30 +64,21 @@ PAN-OS Monitor is a Chrome MV3 browser extension that connects directly to Palo 
 ### Adding a Firewall
 
 **Method 1 — Auto-detect (recommended):**
-Open your firewall's management URL in Chrome, log in with username/password. The extension automatically detects the login, extracts the API key, and adds the device.
+Open your firewall's management URL in Chrome and log in. The extension automatically detects the login, extracts the API key, and adds the device.
 
 **Method 2 — Manual:**
-Click **Add Firewall** in the dashboard sidebar, enter the HTTPS URL and your API Key.
+Click **Add Firewall** in the dashboard sidebar, enter the HTTPS URL and API Key.
 
-> **Self-signed certificates:** Before adding, open the firewall URL in Chrome and accept the certificate warning ("Advanced → Proceed"). This is required only once per device.
+> **Self-signed certificates:** Open the firewall URL in Chrome first and accept the certificate warning. Required only once per device.
 
----
+### Data Collection
 
-## Screenshots
+| Data | Frequency |
+|------|-----------|
+| Performance (CPU, sessions, interfaces, counters, GP) | Every 5 minutes (auto) |
+| System info | Every 30 minutes (auto) |
+| Disk space | Manual refresh only |
+| Hardware port statistics | On demand (click interface row) |
+| GitHub update check | Weekly |
 
-> <img width="2838" height="1770" alt="image" src="https://github.com/user-attachments/assets/0ace37b5-c419-490e-8b4a-0d6f9692bfdb" />
-
-
----
-
-## Disclaimer
-
-This project is an independent open-source tool and is not affiliated with, endorsed by, or officially supported by Palo Alto Networks.
-
-> 本项目为独立开源工具，与 Palo Alto Networks 官方无关。
-
----
-
-## License
-
-MIT License — see [LICENSE](LICENSE) for details.
+All data is processed locally. No data is uploaded to any external server.
