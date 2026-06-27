@@ -15,11 +15,11 @@ Download the latest release from [release page](https://github.com/ro-qq/panos-m
 
 ---
 
-**Read this in other languages: [简体中文](README.zhcn.md),[English](README.en.md)**
+## Read this in other languages: [简体中文](README.zhcn.md),[English](README.en.md)
 
 ---
 
-### Overview
+## Overview
 
 PAN-OS Monitor is a Chrome MV3 browser extension that connects directly to Palo Alto Networks firewalls via the PAN-OS XML API and visualizes real-time health and performance data — **no server, no database, no middleware required**.
 
